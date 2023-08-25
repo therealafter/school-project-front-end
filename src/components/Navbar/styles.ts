@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-weight: 500;
-  font-size: 35px;
+  font-size: 28px;
   font-family: "Inter", sans-serif;
   color: #6e6d7a;
   margin: 0;
@@ -22,11 +22,12 @@ export const Title = styled.h1`
   }
 `;
 
-export const Add = styled.img`
-  width: 35px;
-  height: 35px;
+export const Add = styled.button`
   margin-top: 0;
-  margin-right: 10px; /* Adicione um espaçamento à direita */
+  margin: 0;
+  
+  background: transparent;
+  border: none;
 
   @media (max-width: 600px) {
     width: 100%;

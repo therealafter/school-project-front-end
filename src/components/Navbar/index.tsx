@@ -6,7 +6,7 @@ export const Navbar = () => {
     <Container>
       <Title>3C</Title>
       <SearchComponent />
-      <Add src="/assets/add.svg" alt="Add" />
+      <Add><img src="/assets/add.svg" alt="Add" /></Add>
     </Container>
   )
 }

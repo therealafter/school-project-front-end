@@ -7,8 +7,6 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
-
-
 `;
 
 export const SelectedButton = styled.button<{ selected: any }>`
@@ -23,7 +21,8 @@ export const SelectedButton = styled.button<{ selected: any }>`
 
   color: ${(props: any) => (props.selected ? "#FFF" : "#FFF")};
   background: ${(props: any) =>
-    props.selected ? "#8656b8" : "rgba(134, 86, 184, 0.15)"}; /* Roxo escuro para selecionado */
+    props.selected ? "#8656b8" : "rgba(134, 86, 184, 0.15)"};
+  transition: background 0.2s ease; /* Adicionando transição */
 
 border-radius: 10px;
   border: none;
@@ -44,6 +43,7 @@ export const UnselectedButton = styled.button<{ selected: any }>`
 
   background: ${(props: any) =>
     props.selected ? "#8656b8" : "rgba(134, 86, 184, 0.15)"}; /* Roxo escuro para selecionado */
+  transition: background 0.2s ease; /* Adicionando transição */
 
   border: none;
 `;
