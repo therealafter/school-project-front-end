@@ -1,4 +1,5 @@
 import { Content } from "../components/Content";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Navbar } from "../components/Navbar";
 import { Container } from "./styles";
@@ -36,6 +37,9 @@ export default function Home() {
         activity="Matemática"
         date="2021-10-10"
       />
+
+      <Footer />
     </Container>
+
   )
 }

@@ -5,6 +5,8 @@ html {
   font-size: medium;
   font-style: normal;
   font-family: "Inter", sans-serif;
+
+  border: none;
 }
 
 body {

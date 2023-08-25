@@ -8,6 +8,64 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+
+  color: #FFF;
+
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="file"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e5e4e2;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    width: 100%;
+
+    :focus {
+      outline: none;
+      color: #000;
+    }
+  }
+
+
+  button {
+    background-color: #8656b8;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    font-size: medium;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+
+    &:hover {
+      background-color: rgba(134, 86, 184, 0.15);
+    }
+  }
+`;
+
 export const Title = styled.h1`
   font-weight: 500;
   font-size: 28px;
@@ -25,7 +83,7 @@ export const Title = styled.h1`
 export const Add = styled.button`
   margin-top: 0;
   margin: 0;
-  
+
   background: transparent;
   border: none;
 
