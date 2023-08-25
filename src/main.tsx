@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom/client'
 import Home from './pages/Home';
 
 import "./styles/global.css"
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer } from 'react-toastify';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Home />
+    <ToastContainer />
   </React.StrictMode>,
 )

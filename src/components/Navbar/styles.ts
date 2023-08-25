@@ -8,6 +8,28 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const StyledSelect = styled.select`
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e4e2;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    color: #000;
+  }
+
+  option:hover {
+    background-color: #6a0dad;
+    color: #fff; /* Cor do texto ao passar o mouse */
+  }
+`;
+
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -28,8 +50,25 @@ export const FormContainer = styled.form`
     font-weight: bold;
   }
 
-  input[type="text"],
   input[type="file"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    background-color: #e5e4e2;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    width: 100%;
+
+    :focus {
+      outline: none;
+      color: #000;
+    }
+  }
+
+  input[type="text"] {
     padding: 8px;
     margin-bottom: 10px;
     border: none;
