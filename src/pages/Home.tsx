@@ -8,10 +8,34 @@ export default function Home() {
     <Container>
       <Navbar />
       <Header />
-      <Content />
-      <Content />
-      <Content />
-      <Content />
+      <Content
+        imgURL="./assets/ex.svg"
+        teacher="João"
+        matter="Matemática"
+        activity="Matemática"
+        date="2021-10-10"
+      />
+      <Content
+        imgURL="./assets/ex.svg"
+        teacher="João"
+        matter="Matemática"
+        activity="Matemática"
+        date="2021-10-10"
+      />
+      <Content
+        imgURL="./assets/ex.svg"
+        teacher="João"
+        matter="Matemática"
+        activity="Matemática"
+        date="2021-10-10"
+      />
+      <Content
+        imgURL="./assets/ex.svg"
+        teacher="João"
+        matter="Matemática"
+        activity="Matemática"
+        date="2021-10-10"
+      />
     </Container>
   )
 }

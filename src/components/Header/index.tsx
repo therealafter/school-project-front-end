@@ -9,7 +9,6 @@ export const Header = () => {
     setSelectedButton(button);
   }
 
-
   return (
     <Container>
       <SelectedButton
