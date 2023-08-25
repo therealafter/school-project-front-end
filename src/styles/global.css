@@ -1,0 +1,39 @@
+html {
+  margin: 0;
+  padding: 0;
+
+  font-size: medium;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  font-family: "Inter", sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222; /* Cores da barra de rolagem (track e thumb) */
+}
+
+/* Estilização da barra de rolagem no Chrome, Edge e alguns navegadores modernos */
+body::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #222; /* Cor do "ponteiro" da barra de rolagem */
+  border-radius: 10px; /* Arredondamento do "ponteiro" */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #888; /* Cor da trilha da barra de rolagem */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
