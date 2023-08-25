@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Inter", sans-serif;
     color: #FFF;
 `;
