@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SearchContainer = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   border-radius: 8px;
   background-color: #e5e4e2;
