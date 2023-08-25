@@ -26,9 +26,9 @@ export const SearchContainer = styled.div`
   background-color: #e5e4e2;
   padding: 5px;
 
-  img {
+  /* img {
     margin-left: 10px;
-  }
+  } */
 
   @media (max-width: 600px) {
     width: 100%;
