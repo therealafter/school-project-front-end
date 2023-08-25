@@ -27,6 +27,16 @@ const customStyles = {
   },
 };
 
+const styles = {
+  dateInput: {
+    padding: '10px',  // Adapte o espaçamento conforme necessário
+    border: '1px solid #ccc',  // Adicione uma borda para separar visualmente o input
+    borderRadius: '5px',  // Arredonde os cantos para um visual mais suave
+    fontSize: '16px',  // Tamanho da fonte
+    lineHeight: '1.5',  // Espaçamento entre linhas
+  },
+};
+
 export const Navbar = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // State para armazenar a imagem selecionada
@@ -36,7 +46,7 @@ export const Navbar = () => {
 
   const [matter, setMatter] = useState(null) as any;
   const [activity, setActivity] = useState(null);
-  const [type, setType] = useState('activity_not_delivery') as any;
+  const [type, setType] = useState('not_delivery') as any;
   const [password, setPassword] = useState(null);
 
   const addActivity = async (event: any) => {
@@ -152,23 +162,27 @@ export const Navbar = () => {
 
           <label>Tipo:</label>
 
-          <StyledSelect>
-            <option onSelect={
-              () => setType('activity_not_delivery')
-            } value="1">Atividade para deixar no caderno</option>
-            <option onSelect={
-              () => setType('job_to_deliver')
-            } value="2">Trabalho para entregar</option>
-            <option onSelect={
-              () => setType('activity_to_deliver')
-            } value="3">Atividade para entregar</option>
+          <StyledSelect onChange={(event) => setType(event.target.value)}>
+            <option value="not_delivery">Atividade para deixar no caderno</option>
+            <option value="job_to_delivery">Trabalho para entregar</option>
+            <option value="activity_to_delivery">Atividade para entregar</option>
           </StyledSelect>
+
+          {
+            (type === 'job_to_delivery' || type === 'activity_to_delivery') && (
+              <>
+                <label>Data de entrega:</label>
+                <input type="date" style={styles.dateInput} />
+                <br />
+              </>
+            )
+          }
 
           {/* Image File */}
           <label>Imagem:</label>
           <input type="file" accept="image/*" onChange={handleImageUpload} />
 
-          {selectedImage && (
+          {/* {selectedImage && (
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
               <img
                 src={selectedImage}
@@ -176,7 +190,7 @@ export const Navbar = () => {
                 style={{ maxWidth: '50%', border: '2px solid #8656b8', borderRadius: '8px' }}
               />
             </div>
-          )}
+          )} */}
 
 
           {/* Secret input */}
