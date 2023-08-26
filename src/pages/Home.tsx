@@ -59,7 +59,8 @@ export default function Home() {
   const [type, setType] = useState('not_delivery') as any;
   const [password, setPassword] = useState(null);
 
-  const [search, setSearch] = useState(null as any);
+  const [search, setSearch] = useState('');
+  const [typingTimeout, setTypingTimeout] = useState<NodeJS.Timeout | null>(null);
 
   function handleSelectedButton(button: string) {
     if (button === selectedButton) return;
@@ -126,18 +127,15 @@ export default function Home() {
     }
   };
 
-  const searchActivities = async (params: string) => {
+  const searchActivities = useCallback(async (params: string) => {
     setLoading(true);
 
-    setInterval(async () => {
-      const response = await api.get(`/activities/search?&search=${params}`);
-
-      setActivities(response.data);
-
+    setTimeout(async () => {
+      await api.get(`/activities/search?&search=${params}`);
     }, 250);
 
     setLoading(false);
-  };
+  }, []);
 
   const uniqueTeacherNames = Array.from(new Set(mattersData.map(subject => subject.teacher)));
 
@@ -154,10 +152,30 @@ export default function Home() {
   }, [selectedButton])
 
   useEffect(() => {
+    // Se o usuário parou de digitar por 300ms (ajuste conforme necessário), faça a busca
     if (search === null || search === "") return;
 
-    searchActivities(search);
-  }, [search])
+    // Limpa o timeout anterior para evitar a execução da busca
+    // se o usuário continuar digitando dentro do intervalo de tempo
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+
+    // Inicia um novo timeout para realizar a busca após o intervalo
+    const newTypingTimeout = setTimeout(() => {
+      searchActivities(search);
+    }, 300); // Atraso de 300ms
+
+    // Atualiza o estado do timeout
+    setTypingTimeout(newTypingTimeout);
+
+    // Limpa o timeout quando o componente é desmontado
+    return () => {
+      if (typingTimeout) {
+        clearTimeout(typingTimeout);
+      }
+    };
+  }, [search]);
 
   return (
     <>
