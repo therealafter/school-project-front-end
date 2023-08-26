@@ -33,10 +33,12 @@ export const Content = (data: IShowActivity) => {
           </span>
         </Title>
 
-        {data.deadline !== null || "1970-01-01T00:00:00.000Z" && (
-          <DeadlineButton isLate={new Date(data?.deadline) < new Date()}>
-            {new Date(data?.deadline) < new Date() ? "Atrasado" : "Entregar até"} {new Date(data?.deadline).toLocaleDateString()}
-          </DeadlineButton>
+        {data.deadline !== "1970-01-01T00:00:00.000Z" && (
+          <>
+            <DeadlineButton isLate={new Date(data?.deadline) < new Date()}>
+              {new Date(data?.deadline) < new Date() ? "Atrasado" : "Entregar até"} {new Date(data?.deadline).toLocaleDateString()}
+            </DeadlineButton>
+          </>
         )}
 
       </div>

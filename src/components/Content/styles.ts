@@ -21,7 +21,7 @@ export const Title = styled.h1`
 `;
 
 export const DeadlineButton = styled.button<{ isLate: boolean }>`
-  margin-top: 5px;
+  margin-top: 8px;
   padding: 5px 10px;
   font-size: 14px;
   border: none;
