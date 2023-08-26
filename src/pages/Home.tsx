@@ -192,7 +192,7 @@ export default function Home() {
           activities.map((activity: any) => (
             <Content
               key={activity?.id}
-              imgURL={`http://schoolapi.syncrostudios.com.br:5555/images/${activity?.imageURL}`}
+              imgURL={`https://schoolapi.syncrostudios.com.br/images/${activity?.imageURL}`}
               teacher={activity?.teacher}
               matter={activity?.matter}
               activity={activity?.activityOrHability}
