@@ -131,7 +131,8 @@ export default function Home() {
     setLoading(true);
 
     setTimeout(async () => {
-      await api.get(`/activities/search?&search=${params}`);
+      const response = await api.get(`/activities/search?&search=${params}`);
+      setActivities(response.data);
     }, 250);
 
     setLoading(false);
