@@ -66,9 +66,12 @@ export default function Home() {
   }
 
   const handleActivities = useCallback(async (params?: string) => {
-    const response = await api.get(`/activities/${params === "activities" ? "activities" : "jobs"}`);
-    setActivities(response.data);
+    setLoading(true);
 
+    setTimeout(async () => {
+      const response = await api.get(`/activities/${params === "activities" ? "activities" : "jobs"}`);
+      setActivities(response.data);
+    }, 250)
     setLoading(false);
   }, []);
 
@@ -115,6 +118,7 @@ export default function Home() {
 
   const searchActivities = async (params: string) => {
     const response = await api.get(`/activities/search?&search=${params}`);
+
     setActivities(response.data);
 
     setLoading(false);
@@ -140,7 +144,7 @@ export default function Home() {
 
   useEffect(() => {
     if (search === null || search === "") return;
-    
+
     searchActivities(search);
   }, [search])
 
