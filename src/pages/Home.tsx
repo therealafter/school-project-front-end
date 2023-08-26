@@ -72,6 +72,7 @@ export default function Home() {
       const response = await api.get(`/activities/${params === "activities" ? "activities" : "jobs"}`);
       setActivities(response.data);
     }, 250)
+
     setLoading(false);
   }, []);
 
@@ -118,10 +119,15 @@ export default function Home() {
   };
 
   const searchActivities = async (params: string) => {
-    const response = await api.get(`/activities/search?&search=${params}`);
+    setLoading(true);
 
-    setActivities(response.data);
+    setInterval(async () => {
+      const response = await api.get(`/activities/search?&search=${params}`);
 
+      setActivities(response.data);
+
+    }, 250);
+    
     setLoading(false);
   };
 
