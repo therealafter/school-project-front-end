@@ -12,9 +12,10 @@ interface IShowActivity {
 export const Content = (data: IShowActivity) => {
   return (
     <Container>
-      <img src={data.imgURL} alt="3C" />
+      <img src={data.imgURL} alt="3C" width="350px" height="350px" />
 
       <div>
+        <br />
         <Title>
           Professor(a): <span>{data.teacher}</span>
         </Title>
