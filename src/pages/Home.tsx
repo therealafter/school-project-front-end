@@ -74,8 +74,6 @@ export default function Home() {
   const addActivity = async (event: any) => {
     event.preventDefault();
 
-    console.log(matter)
-
     if (!selectedTeacher || !matter || !activity || !type || !password) {
       toast("Preencha todos os campos!", {
         theme: "dark",
@@ -110,8 +108,7 @@ export default function Home() {
   const handleImageUpload = (event: any) => {
     const selectedImage = event.target.files[0];
     if (selectedImage) {
-      const imageURL = URL.createObjectURL(selectedImage);
-      setSelectedImage(imageURL as any);
+      setSelectedImage(selectedImage);
     }
   };
 
