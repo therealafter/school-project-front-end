@@ -60,7 +60,7 @@ export default function Home() {
   const [password, setPassword] = useState(null);
 
   const [search, setSearch] = useState('');
-  const [typingTimeout, setTypingTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [typingTimeout, setTypingTimeout] = useState<any>(null);
 
   function handleSelectedButton(button: string) {
     if (button === selectedButton) return;
@@ -187,7 +187,7 @@ export default function Home() {
             <img src="/assets/search.svg" alt="Search" />
             <SearchInput onChange={
               (event: any) => setSearch(event.target.value)
-            } type="text" placeholder={`Tente “Wagner” ou "UC6"`} />
+            } type="text" placeholder={`Tente “Wagner” ou "UC6`} />
           </SearchContainer>
 
           <Add onClick={() => setModalIsOpen(true)}>
