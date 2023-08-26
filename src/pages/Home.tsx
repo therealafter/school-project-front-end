@@ -85,6 +85,8 @@ export default function Home() {
       return;
     }
 
+    setModalIsOpen(false);
+
     const data = new FormData();
 
     data.append('teacher', String(selectedTeacher));
@@ -94,14 +96,13 @@ export default function Home() {
     data.append('password', String(password)); // Supondo que password contém o valor correto
     data.append('image', selectedImage as any);
 
+
     try {
       await api.post('/activities', data);
 
       toast("Atividade adicionada com sucesso!", {
         theme: "dark",
       })
-
-      setModalIsOpen(false);
     } catch (error) {
       toast("Erro ao adicionar atividade!", {
         theme: "dark",

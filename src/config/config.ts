@@ -13,4 +13,5 @@ export const mattersData = [
   { subject: 'Orientação de Estudos', teacher: 'Dina' },
   { subject: 'Manipulação de Genes', teacher: 'Telma' },
   { subject: 'Alimentação Sustentável', teacher: 'Joelma' },
+  { subject: 'UC4', teacher: 'Wagner' },
 ];
