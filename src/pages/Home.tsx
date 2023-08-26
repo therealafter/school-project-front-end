@@ -49,6 +49,8 @@ export default function Home() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // State para armazenar a imagem selecionada
 
+  const [deadline, setDeadline] = useState(null) as any; // State para armazenar a data de entrega [Não obrigatório
+
   const [selectedTeacher, setSelectedTeacher] = useState('');
   const [selectedTeacherSubjects, setSelectedTeacherSubjects] = useState([]) as any;
 
@@ -92,11 +94,11 @@ export default function Home() {
 
     data.append('teacher', String(selectedTeacher));
     data.append('matter', String(matter));
+    data.append('deliveryDate', String(new Date(setDeadline)));
     data.append('activityOrHability', String(activity)); // Supondo que activity contém o valor correto
     data.append('type', String(type)); // Supondo que type contém o valor correto
     data.append('password', String(password)); // Supondo que password contém o valor correto
     data.append('image', selectedImage as any);
-
 
     try {
       await api.post('/activities', data);
@@ -278,7 +280,11 @@ export default function Home() {
             (type === 'job_to_delivery' || type === 'activity_to_delivery') && (
               <>
                 <label>Data de entrega:</label>
-                <input type="date" style={styles.dateInput} />
+                <input type="date" style={styles.dateInput}
+                  onChange={
+                    (event: any) => setDeadline(event.target.value)
+                  }
+                />
                 <br />
               </>
             )
