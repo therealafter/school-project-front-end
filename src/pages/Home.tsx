@@ -169,7 +169,7 @@ export default function Home() {
             <img src="/assets/search.svg" alt="Search" />
             <SearchInput onChange={
               (event: any) => setSearch(event.target.value)
-            } type="text" placeholder={`Tente “Matemática”`} />
+            } type="text" placeholder={`Tente “Wagner”`} />
           </SearchContainer>
 
           <Add onClick={() => setModalIsOpen(true)}>
