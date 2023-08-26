@@ -92,9 +92,11 @@ export default function Home() {
 
     const data = new FormData();
 
+    const deadlineUpdated = new Date(deadline).toISOString();
+
     data.append('teacher', String(selectedTeacher));
     data.append('matter', String(matter));
-    data.append('deliveryDate', String(new Date(setDeadline)));
+    data.append('deliveryDate', String(deadlineUpdated));
     data.append('activityOrHability', String(activity)); // Supondo que activity contém o valor correto
     data.append('type', String(type)); // Supondo que type contém o valor correto
     data.append('password', String(password)); // Supondo que password contém o valor correto
@@ -107,7 +109,9 @@ export default function Home() {
         theme: "dark",
       })
 
-      // window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     } catch (error) {
       toast("Erro ao adicionar atividade!", {
         theme: "dark",
