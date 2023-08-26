@@ -107,7 +107,7 @@ export default function Home() {
         theme: "dark",
       })
 
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       toast("Erro ao adicionar atividade!", {
         theme: "dark",
