@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:5555',
+  baseURL: 'http://schoolapi.syncrostudios.com.br:5555/',
 });

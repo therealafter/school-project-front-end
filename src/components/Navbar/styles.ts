@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const NavbarContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 10px 10px;
@@ -82,6 +82,10 @@ export const FormContainer = styled.form`
     :focus {
       outline: none;
       color: #000;
+    }
+
+        @media (max-width: 600px) {
+      color: #000; // Altera a cor do texto para preto em dispositivos móveis
     }
   }
 

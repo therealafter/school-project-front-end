@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const HeaderContainer = styled.div`
     display: flex;
     width: 390px;
     /* padding: 20px 20px 0px 20px; */

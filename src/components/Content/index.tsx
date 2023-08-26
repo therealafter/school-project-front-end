@@ -1,4 +1,4 @@
-import { Container, Title } from "./styles"
+import { Container, DeadlineButton, Title } from "./styles"
 
 interface IShowActivity {
   imgURL: string;
@@ -6,20 +6,38 @@ interface IShowActivity {
   matter: string;
   activity: string;
   date: string;
+  deadline?: any;
 }
 
 export const Content = (data: IShowActivity) => {
   return (
     <Container>
-      <img src="./assets/ex.svg" alt="3C" />
+      <img src={data.imgURL} alt="3C" />
 
       <div>
-        <Title>Professor(a): {data.teacher}</Title>
-        <Title>Matéria: {data.matter}</Title>
-        <Title>Atividade: {data.activity} </Title>
-        <Title>Data: {new Date(data.date).toLocaleDateString()} -
-          {" "} {new Date(data.date).toLocaleTimeString()}
+        <Title>
+          Professor(a): <span>{data.teacher}</span>
         </Title>
+        <Title>
+          Matéria: <span>{data.matter}</span>
+        </Title>
+        <Title>
+          Atividade: <span>{data.activity}</span>
+        </Title>
+        <Title>
+          Data de postagem:{" "}
+          <span>
+            {new Date(data.date).toLocaleDateString()} -{" "}
+            {new Date(data.date).toLocaleTimeString()}
+          </span>
+        </Title>
+
+        {data.deadline && (
+          <DeadlineButton isLate={new Date(data?.deadline) < new Date()}>
+            {new Date(data?.deadline) < new Date() ? "Atrasado" : "Entregar até"} {new Date(data?.deadline).toLocaleDateString()}
+          </DeadlineButton>
+        )}
+
       </div>
     </Container>
   )
