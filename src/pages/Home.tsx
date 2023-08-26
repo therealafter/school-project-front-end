@@ -104,6 +104,8 @@ export default function Home() {
       toast("Atividade adicionada com sucesso!", {
         theme: "dark",
       })
+
+      window.location.reload();
     } catch (error) {
       toast("Erro ao adicionar atividade!", {
         theme: "dark",
@@ -127,7 +129,7 @@ export default function Home() {
       setActivities(response.data);
 
     }, 250);
-    
+
     setLoading(false);
   };
 
