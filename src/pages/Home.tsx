@@ -146,10 +146,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    handleActivities();
-  }, [])
-
-  useEffect(() => {
     handleActivities(selectedButton);
   }, [selectedButton])
 
