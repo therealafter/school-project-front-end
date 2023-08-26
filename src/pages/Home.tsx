@@ -57,7 +57,7 @@ export default function Home() {
   const [type, setType] = useState('not_delivery') as any;
   const [password, setPassword] = useState(null);
 
-  const [search, setSearch] = useState('' as any);
+  const [search, setSearch] = useState(null as any);
 
   function handleSelectedButton(button: string) {
     if (button === selectedButton) return;
@@ -68,6 +68,7 @@ export default function Home() {
   const handleActivities = useCallback(async (params?: string) => {
     const response = await api.get(`/activities/${params === "activities" ? "activities" : "jobs"}`);
     setActivities(response.data);
+
     setLoading(false);
   }, []);
 
@@ -115,6 +116,7 @@ export default function Home() {
   const searchActivities = async (params: string) => {
     const response = await api.get(`/activities/search?&search=${params}`);
     setActivities(response.data);
+
     setLoading(false);
   };
 
@@ -134,10 +136,11 @@ export default function Home() {
 
   useEffect(() => {
     handleActivities(selectedButton);
-
   }, [selectedButton])
 
   useEffect(() => {
+    if (search === null || search === "") return;
+    
     searchActivities(search);
   }, [search])
 

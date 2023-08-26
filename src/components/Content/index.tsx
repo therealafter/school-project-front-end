@@ -12,7 +12,7 @@ interface IShowActivity {
 export const Content = (data: IShowActivity) => {
   return (
     <Container>
-      <img src={data.imgURL} alt="3C" width="350px" height="350px" />
+      <img src={data?.imgURL} alt="3C" width="350px" height="350px" />
 
       <div>
         <br />
