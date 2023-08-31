@@ -313,9 +313,8 @@ export default function Home() {
           }
 
           {/* Image File */}
-          <label>Imagem:</label>
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
-
+          <label>Imagem ou Pdf/Slide</label>
+          <input type="file" accept="image/*,.pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={handleImageUpload} />
 
           {/* Secret input */}
           <label>Senha:</label>

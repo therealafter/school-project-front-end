@@ -5,6 +5,18 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    button {
+        margin-top: auto; /* Alteração feita aqui */
+        margin-bottom: 8px; /* Adicionado para garantir um espaçamento entre o botão e o conteúdo acima */
+        padding: 5px 10px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        color: #FFF;
+        cursor: pointer;
+        background-color: #8656B8;
+    }
 `;
 
 export const Title = styled.h1`
@@ -20,7 +32,7 @@ export const Title = styled.h1`
 `;
 
 export const DeadlineButton = styled.button<{ isLate: boolean }>`
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 5px 10px;
   font-size: 14px;
   border: none;

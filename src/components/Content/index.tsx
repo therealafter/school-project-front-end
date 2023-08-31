@@ -10,11 +10,23 @@ interface IShowActivity {
 }
 
 export const Content = (data: IShowActivity) => {
+  const downloadFile = () => {
+    // download by url
+    window.open(data?.imgURL, "_blank");
+  }
+
   return (
     <Container>
-      <img src={data?.imgURL} alt="3C" width="350px" height="350px" />
+      {data?.imgURL && (<>
+        {data?.imgURL.endsWith(".pdf") ? (<>
+          <iframe src={data?.imgURL} width="350px" height="350px" />
+        </>) : (<>
+          <img src={data?.imgURL} alt="3C" width="350px" height="350px" />
+        </>)}
+      </>)}
 
       <div>
+        <button onClick={downloadFile}>Visualizar</button>
         <br />
         <Title>
           Professor(a): <span>{data.teacher}</span>
