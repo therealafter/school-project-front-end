@@ -41,7 +41,7 @@ export const classSchedule = {
     { time: '15:45 - 16:30', subject: 'Tutoria', professor: 'Sílvia' },
     { time: '16:30 - 16:45', subject: 'INTERVALO', professor: 'Sem professor' },
     { time: '16:45 - 17:30', subject: 'Projeto de Vida', professor: 'Sílvia' },
-    { time: '17:30 - 18:15', subject: 'UC3', professor: '???' },
+    { time: '17:30 - 18:15', subject: 'UC3', professor: 'Roberto' },
     { time: '18:15 - 19:00', subject: 'Projeto de Vida', professor: 'Sílvia' },
     { time: '19:00 - 19:45', subject: 'INTERVALO', professor: 'Sem Professor' },
     { time: '19:45 - 20:30', subject: 'Território', professor: 'Roberto' },
