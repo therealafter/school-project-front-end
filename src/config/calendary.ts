@@ -37,7 +37,7 @@ export const classSchedule = {
   ],
   'Quinta': [
     { time: '14:15 - 15:00', subject: 'UC4', professor: 'Wagner' },
-    { time: '15:00 - 15:45', subject: 'UC4', professor: 'Wagner' },
+    { time: '15:01 - 15:45', subject: 'UC4', professor: 'Wagner' },
     { time: '15:45 - 16:30', subject: 'Tutoria', professor: 'Sem professor' },
     { time: '16:30 - 16:45', subject: 'INTERVALO', professor: 'Sem professor' },
     { time: '16:45 - 17:30', subject: 'Projeto de Vida', professor: 'Sílvia' },
