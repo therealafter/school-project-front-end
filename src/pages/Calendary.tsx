@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Add, NavbarContainer, Title } from "../components/Navbar/styles";
+import { NavbarContainer, Title } from "../components/Navbar/styles";
 import { SearchContainer } from "../components/Search/styles";
 import { Container } from "./styles";
 
