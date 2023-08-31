@@ -103,8 +103,12 @@ export const Calendary = () => {
               return (
                 <TeacherContainer key={index} style={{ border: isLessonPast ? '1px solid red' : '1px solid #ccc', padding: '10px', marginBottom: '10px', borderRadius: '5px', backgroundColor: isLessonPast ? 'lightcoral' : 'black' }}>
                   <ActuallyTime>{lesson.subject} - {lesson.time}</ActuallyTime>
-                  <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>
-                  {isLessonPast && <button style={{ backgroundColor: 'red', color: 'white' }}>Aula Passada</button>}
+                  {/* <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher> */}
+
+                  {lesson.professor !== "Sem professor" && <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>}
+                  {isLessonPast && <button style={{ backgroundColor: 'red', color: 'white' }}>
+                    Aula passada
+                  </button>}
                 </TeacherContainer>
               );
             })}
