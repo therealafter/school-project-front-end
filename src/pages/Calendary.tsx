@@ -77,10 +77,6 @@ export const Calendary = () => {
 
         <SearchContainer>
         </SearchContainer>
-
-        <Add>
-          <img src="/assets/add.svg" alt="Add" />
-        </Add>
       </NavbarContainer>
 
       <Title>
