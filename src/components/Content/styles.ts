@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     margin-top: 15px;
-    width: 1920;
     justify-content: center;
     align-items: center;
     gap: 10px;
