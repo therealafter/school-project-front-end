@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import {  Suspense } from "react";
 import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import { Calendary } from "./pages/Calendary";

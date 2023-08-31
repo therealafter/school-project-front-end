@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Add, NavbarContainer, Title } from "../components/Navbar/styles";
-import { SearchContainer, SearchInput } from "../components/Search/styles";
+import { SearchContainer } from "../components/Search/styles";
 import { Container } from "./styles";
 
 import { useEffect, useState } from "react"
