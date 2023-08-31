@@ -18,7 +18,7 @@ export const Content = (data: IShowActivity) => {
   return (
     <Container>
       {data?.imgURL && (<>
-        {data?.imgURL.endsWith(".pdf") ? (<>
+        {data?.imgURL.endsWith(".pdf" || ".doc" || ".pptx" || ".docx") ? (<>
           <iframe src={data?.imgURL} width="350px" height="350px" />
         </>) : (<>
           <img src={data?.imgURL} alt="3C" width="350px" height="350px" />
