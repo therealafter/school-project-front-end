@@ -24,8 +24,8 @@ export const classSchedule = {
     { time: '20:30 - 21:15', subject: 'UC-6', professor: 'Roberto' },
   ],
   'Quarta': [
-    { time: '14:15 - 15:00', subject: 'Fotografia', professor: 'Wagner/Darque' },
-    { time: '15:00 - 15:45', subject: 'Fotografia', professor: 'Wagner/Darque' },
+    { time: '14:15 - 15:00', subject: 'Eletivas', professor: '???' },
+    { time: '15:00 - 15:45', subject: 'Eletivas', professor: '???' },
     { time: '15:45 - 16:30', subject: 'UC4', professor: 'Wagner' },
     { time: '16:30 - 16:45', subject: 'INTERVALO', professor: 'Sem professor' },
     { time: '16:45 - 17:30', subject: 'Educação Física', professor: 'Vinícius' },
