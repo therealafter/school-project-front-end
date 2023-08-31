@@ -3,7 +3,7 @@ import { NavbarContainer, Title } from "../components/Navbar/styles";
 import { SearchContainer } from "../components/Search/styles";
 import { Container } from "./styles";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { classSchedule } from "../config/calendary";
 import { ActuallyTeacher, ActuallyTime, TeacherContainer } from "../components/Calendary/styles";
 
@@ -20,19 +20,19 @@ export const Calendary = () => {
 
     return {
       day: dayIndex,
-      time: currentTime
-    }
-  }
+      time: currentTime,
+    };
+  };
 
   const getDayName = (dayIndex: any) => {
     const daysOfWeek = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
     return daysOfWeek[dayIndex];
-  }
+  };
 
   const isTimeBetween = (currentTime: any, timeRange: any) => {
     const [start, end] = timeRange.split(" - ");
     return currentTime >= start && currentTime <= end;
-  }
+  };
 
   useEffect(() => {
     const { day, time } = getCurrentDayAndTime();
@@ -56,27 +56,26 @@ export const Calendary = () => {
           const currentLesson = currentDaySchedule.find((lesson: any) => isTimeBetween(time, lesson.time));
 
           if (currentLesson) {
-
             setCurrentSchedule([currentLesson]);
 
             const otherLessons = currentDaySchedule.filter((lesson: any) => lesson.time !== currentLesson.time);
             setOtherSchedule(otherLessons);
-
           }
         }
       }
     }
-  }, [])
+  }, []);
 
   return (
     <Container>
       <NavbarContainer>
         <Title>
-          <Link to="/"><img src="/assets/calendary.png" alt="Bell" /></Link>
+          <Link to="/">
+            <img src="/assets/calendary.png" alt="Bell" />
+          </Link>
         </Title>
 
-        <SearchContainer>
-        </SearchContainer>
+        <SearchContainer></SearchContainer>
       </NavbarContainer>
 
       <Title>
@@ -97,14 +96,17 @@ export const Calendary = () => {
             <p>Próximas aulas:</p>
 
             {otherSchedule.map((lesson: any, index: any) => {
-              if (index === 0) return;
+              if (index === 0) return null;
+
+              const isLessonPast = getCurrentDayAndTime().time > lesson.time; // Verifica se o horário atual é após o horário da aula.
 
               return (
-                <TeacherContainer>
+                <TeacherContainer key={index} style={{ border: isLessonPast ? '1px solid red' : '1px solid #ccc', padding: '10px', marginBottom: '10px', borderRadius: '5px', backgroundColor: isLessonPast ? 'lightcoral' : 'black' }}>
                   <ActuallyTime>{lesson.subject} - {lesson.time}</ActuallyTime>
                   <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>
+                  {isLessonPast && <button style={{ backgroundColor: 'red', color: 'white' }}>Aula Passada</button>}
                 </TeacherContainer>
-              )
+              );
             })}
           </>
         ) : (
@@ -112,5 +114,5 @@ export const Calendary = () => {
         )}
       </Title>
     </Container>
-  )
+  );
 };
