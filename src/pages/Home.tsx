@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 
 import Modal from "react-modal";
 import { SearchContainer, SearchInput } from "../components/Search/styles";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   overlay: {
@@ -182,7 +183,9 @@ export default function Home() {
     <>
       <Container>
         <NavbarContainer>
-          <Title>3C</Title>
+          <Title>
+            <Link to="/calendary"><img src="/assets/calendary.png" alt="Bell" /></Link>
+          </Title>
 
           <SearchContainer>
             <img src="/assets/search.svg" alt="Search" />

@@ -6,10 +6,11 @@ import "./styles/global.css"
 import 'react-toastify/dist/ReactToastify.css';
 
 import { ToastContainer } from 'react-toastify';
+import { Routes } from './routes';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Home />
+    <Routes />
     <ToastContainer />
   </React.StrictMode>,
 )

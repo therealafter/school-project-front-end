@@ -116,10 +116,32 @@ export const Title = styled.h1`
   color: #6e6d7a;
   margin: 0;
 
+  h1 {
+    /* color: green color */
+  }
+
+  p {
+    /* color: red color */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    color: #fff;
+  }
+
+  strong {
+    color: #8656b8; /* Cor roxa */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    margin-left: 35px;
+  }
+
   @media (max-width: 600px) {
     width: 100%;
     margin-bottom: 10px;
-    margin-top: 9px;
+    margin-top: 19px;
   }
 `;
 
