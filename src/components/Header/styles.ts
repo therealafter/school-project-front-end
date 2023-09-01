@@ -21,7 +21,7 @@ export const SelectedButton = styled.button<{ selected: any }>`
 
   color: ${(props: any) => (props.selected ? "#FFF" : "#FFF")};
   background: ${(props: any) =>
-    props.selected ? "#8656b8" : "rgba(134, 86, 184, 0.15)"};
+    props.selected ? "#6F61C0" : "rgba(134, 86, 184, 0.15)"};
   transition: background 0.2s ease; /* Adicionando transição */
 
 border-radius: 10px;
@@ -42,7 +42,7 @@ export const UnselectedButton = styled.button<{ selected: any }>`
   color: ${(props: any) => (props.selected ? "#FFF" : "#FFF")};
 
   background: ${(props: any) =>
-    props.selected ? "#8656b8" : "rgba(134, 86, 184, 0.15)"}; /* Roxo escuro para selecionado */
+    props.selected ? "#6F61C0" : "rgba(134, 86, 184, 0.15)"}; /* Roxo escuro para selecionado */
   transition: background 0.2s ease; /* Adicionando transição */
 
   border: none;

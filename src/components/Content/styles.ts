@@ -15,12 +15,12 @@ export const Container = styled.div`
         border-radius: 5px;
         color: #FFF;
         cursor: pointer;
-        background-color: #8656B8;
+        background-color: #3D246C;
     }
 `;
 
 export const ImageWrapper = styled.div`
-  border: 2px solid #8656b8;
+  border: 2px solid #3D246C;
   border-radius: 10px;
   padding: 5px;
   display: inline-block;
@@ -45,7 +45,7 @@ export const Title = styled.h1`
   margin: 0;
 
   span {
-    color: #8656b8; /* Cor roxa */
+    color: #512B81; /* Cor roxa */
   }
 `;
 
