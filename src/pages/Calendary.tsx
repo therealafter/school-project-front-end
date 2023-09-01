@@ -87,7 +87,7 @@ export const Calendary = () => {
 
             <TeacherContainer>
               <ActuallyTime>Aula atual: {currentSchedule[0].subject} - {currentSchedule[0].time} </ActuallyTime>
-              <ActuallyTeacher>Professor: {currentSchedule[0].professor}</ActuallyTeacher>
+              <ActuallyTeacher>Professor(a): {currentSchedule[0].professor}</ActuallyTeacher>
             </TeacherContainer>
 
             <br />
@@ -95,23 +95,27 @@ export const Calendary = () => {
             {/* proximas aulas */}
             <p>Próximas aulas:</p>
 
-            {otherSchedule.map((lesson: any, index: any) => {
-              if (index === 0) return null;
-
-              const isLessonPast = getCurrentDayAndTime().time > lesson.time; // Verifica se o horário atual é após o horário da aula.
-
-              return (
-                <TeacherContainer key={index} style={{ border: isLessonPast ? '1px solid red' : '1px solid #ccc', padding: '10px', marginBottom: '10px', borderRadius: '5px', backgroundColor: isLessonPast ? 'lightcoral' : 'black' }}>
-                  <ActuallyTime>{lesson.subject} - {lesson.time}</ActuallyTime>
-                  {/* <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher> */}
-
-                  {lesson.professor !== "Sem professor" && <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>}
-                  {isLessonPast && <button style={{ backgroundColor: 'red', color: 'white' }}>
-                    Aula passada
-                  </button>}
-                </TeacherContainer>
-              );
-            })}
+            {otherSchedule
+              .filter((lesson: any) => getCurrentDayAndTime().time <= lesson.time) // Filtra as aulas que não passaram ainda
+              .map((lesson: any, index: any) => {
+                return (
+                  <TeacherContainer
+                    key={index}
+                    style={{
+                      border: '1px solid #ccc',
+                      padding: '10px',
+                      marginBottom: '10px',
+                      borderRadius: '5px',
+                      backgroundColor: 'black',
+                    }}
+                  >
+                    <ActuallyTime>{lesson.subject} - {lesson.time}</ActuallyTime>
+                    {lesson.professor !== "Sem professor" && (
+                      <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>
+                    )}
+                  </TeacherContainer>
+                );
+              })}
           </>
         ) : (
           <p>Não está em horário de aula no momento.</p>

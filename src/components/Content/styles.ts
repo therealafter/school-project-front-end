@@ -19,6 +19,23 @@ export const Container = styled.div`
     }
 `;
 
+export const ImageWrapper = styled.div`
+  border: 2px solid #8656b8;
+  border-radius: 10px;
+  padding: 5px;
+  display: inline-block;
+
+  img {
+    width: 350px;
+    height: 350px;
+  }
+
+  iframe {
+    width: 350px;
+    height: 350px;
+  }
+`;
+
 export const Title = styled.h1`
   font-weight: 500;
   font-size: 16px;

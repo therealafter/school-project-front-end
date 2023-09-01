@@ -1,4 +1,4 @@
-import { Container, DeadlineButton, Title } from "./styles"
+import { Container, DeadlineButton, ImageWrapper, Title } from "./styles"
 
 interface IShowActivity {
   imgURL: string;
@@ -17,13 +17,15 @@ export const Content = (data: IShowActivity) => {
 
   return (
     <Container>
-      {data?.imgURL && (<>
-        {data?.imgURL.endsWith(".pdf" || ".doc" || ".pptx" || ".docx") ? (<>
-          <iframe src={data?.imgURL} width="350px" height="350px" />
-        </>) : (<>
-          <img src={data?.imgURL} alt="3C" width="350px" height="350px" />
-        </>)}
-      </>)}
+      {data?.imgURL && (
+        <ImageWrapper>
+          {data?.imgURL.endsWith(".pdf" || ".doc" || ".pptx" || ".docx") ? (
+            <iframe src={data?.imgURL} />
+          ) : (
+            <img src={data?.imgURL} alt="3C" />
+          )}
+        </ImageWrapper>
+      )}
 
       <div>
         <button onClick={downloadFile}>Visualizar</button>
