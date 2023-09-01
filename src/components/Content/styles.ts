@@ -7,7 +7,7 @@ export const Container = styled.div`
     gap: 10px;
 
     button {
-        margin-top: auto; /* Alteração feita aqui */
+        margin-top: 4px; /* Alteração feita aqui */
         margin-bottom: 8px; /* Adicionado para garantir um espaçamento entre o botão e o conteúdo acima */
         padding: 5px 10px;
         font-size: 14px;
@@ -28,6 +28,7 @@ export const ImageWrapper = styled.div`
   img {
     width: 350px;
     height: 350px;
+    border-radius: 25px;
   }
 
   iframe {
