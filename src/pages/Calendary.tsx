@@ -102,16 +102,15 @@ export const Calendary = () => {
                   <TeacherContainer
                     key={index}
                     style={{
-                      border: '1px solid #ccc',
                       padding: '10px',
                       marginBottom: '10px',
-                      borderRadius: '5px',
+                      borderRadius: '7px',
                       backgroundColor: 'black',
                     }}
                   >
                     <ActuallyTime>{lesson.subject} - {lesson.time}</ActuallyTime>
-                    {lesson.professor !== "Sem professor" && (
-                      <ActuallyTeacher>Professor: {lesson.professor}</ActuallyTeacher>
+                    {lesson.professor !== "Sem Professor" && (
+                      <ActuallyTeacher>Professor(a): {lesson.professor}</ActuallyTeacher>
                     )}
                   </TeacherContainer>
                 );
